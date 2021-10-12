@@ -13,7 +13,7 @@
 		<ApplicationTitle>HelloMauiToolkit</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.HelloMauiToolkit</ApplicationId>
+		<ApplicationId>com.Minnick.HelloMauiToolkit</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationVersion>1</ApplicationVersion>
@@ -51,11 +51,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="CommunityToolkit.Maui" />
-	</ItemGroup>
-	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre2" />
 	</ItemGroup>
+	 
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<OutputType>WinExe</OutputType>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
