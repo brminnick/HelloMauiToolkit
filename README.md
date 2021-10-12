@@ -20,7 +20,7 @@ xmlns:converters="clr-namespace:CommunityToolkit.Maui.Converters;assembly=Commun
 In your `Binding` assign `Converter={converters:ColorToHexRgbStringConverter}`:
 
 ```xml
-Text="{Binding Path=BackgroundColor, Converter={converters:ColorToHexRgbStringConverter}}
+Text="{Binding Source={x:Reference ClickMeButton}, Path=BackgroundColor, Converter={converters:ColorToHexRgbStringConverter}}
 ```
 
 <p align="center">
