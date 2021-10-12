@@ -18,10 +18,11 @@
                 HorizontalOptions="Center" />
 
             <Label 
-                Text="Welcome to .NET Multi-platform App UI"
+                Text="Welcome to the .NET MAUI Community Toolkit sample app"
+                HorizontalTextAlignment="Center"
                 Grid.Row="1"
                 SemanticProperties.HeadingLevel="Level1"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                SemanticProperties.Description="Welcome to .NET MAUI Community Toolkit sample app"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
@@ -42,21 +43,18 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
-            <Label
-                Grid.Row="2"
-                HorizontalOptions="Center"
-                HorizontalTextAlignment="Center" >
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="Click Me Button Background Color: " />
-                        <Span Text="{Binding Source={x:Reference ClickMeButton},
+            <HorizontalStackLayout Grid.Row="4" HorizontalOptions="Center">
+                <Label
+                    Text="ColorToHexRgbStringConverter: " />
+                <Label
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    Text="{Binding Source={x:Reference ClickMeButton},
                                     Path=BackgroundColor,
                                     Converter={converters:ColorToHexRgbStringConverter}}" />
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+            </HorizontalStackLayout>
 
-            <Image Grid.Row="4"
+            <Image Grid.Row="5"
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 WidthRequest="250"

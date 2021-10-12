@@ -5,7 +5,7 @@ using Application = Microsoft.Maui.Controls.Application;
 
 namespace HelloMauiToolkit
 {
-	public partial class App : Application
+	partial class App : Application
 	{
 		public App()
 		{
