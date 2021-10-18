@@ -54,6 +54,11 @@
 	  <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre2" />
 	</ItemGroup>
 	 
+	<ItemGroup>
+	  <None Remove="global.json" />
+	  <None Remove="Directory.Build.props" />
+	</ItemGroup>
+
 	<PropertyGroup Condition="$(TargetFramework.Contains('-windows'))">
 		<OutputType>WinExe</OutputType>
 		<RuntimeIdentifier>win-x64</RuntimeIdentifier>

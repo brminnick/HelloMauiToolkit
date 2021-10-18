@@ -2,20 +2,25 @@
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Essentials;
 
-namespace HelloMauiToolkit
+namespace HelloMauiToolkit;
+
+partial class MainPage : ContentPage
 {
-    partial class MainPage : ContentPage
+    int count = 0;
+
+    public MainPage()
     {
-        int count = 0;
+        InitializeComponent();
 
-        public MainPage() => InitializeComponent();
+        CounterLabel ??= new();
+        ClickMeButton ??= new();
+    }
 
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-            CounterLabel.Text = $"Current count: {count}";
+    void OnCounterClicked(object sender, EventArgs e)
+    {
+        count++;
+        CounterLabel.Text = $"Current count: {count}";
 
-            SemanticScreenReader.Announce(CounterLabel.Text);
-        }
+        SemanticScreenReader.Announce(CounterLabel.Text);
     }
 }
