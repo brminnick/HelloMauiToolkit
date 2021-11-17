@@ -6,21 +6,21 @@ namespace HelloMauiToolkit;
 
 partial class MainPage : ContentPage
 {
-    int count = 0;
+	int count = 0;
 
-    public MainPage()
-    {
-        InitializeComponent();
+	public MainPage()
+	{
+		InitializeComponent();
 
-        CounterLabel ??= new();
-        ClickMeButton ??= new();
-    }
+		CounterLabel ??= new();
+		ClickMeButton ??= new();
+	}
 
-    void OnCounterClicked(object sender, EventArgs e)
-    {
-        count++;
-        CounterLabel.Text = $"Current count: {count}";
+	void OnCounterClicked(object sender, EventArgs e)
+	{
+		count++;
+		CounterLabel.Text = $"Current count: {count}";
 
-        SemanticScreenReader.Announce(CounterLabel.Text);
-    }
+		SemanticScreenReader.Announce(CounterLabel.Text);
+	}
 }
