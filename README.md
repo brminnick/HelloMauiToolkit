@@ -1,4 +1,4 @@
-[![Mobile](https://github.com/brminnick/HelloMauiToolkit/actions/workflows/mobile.yml/badge.svg)](https://github.com/brminnick/HelloMauiToolkit/actions/workflows/mobile.yml)
+[![MAUI](https://github.com/brminnick/HelloMauiToolkit/actions/workflows/maui.yml/badge.svg)](https://github.com/brminnick/HelloMauiToolkit/actions/workflows/maui.yml)
 
 # HelloMauiToolkit
 The [.NET MAUI Community Toolkit](https://github.com/communitytoolkit/maui) is a collection of common elements for development with .NET MAUI that developers tend to replicate across multiple apps. It simplifies and demonstrates common developer tasks when building apps with .NET MAUI.
