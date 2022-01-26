@@ -84,7 +84,8 @@ jobs:
 
       - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
         run: |
-          curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.200-preview.22055.15 --quality preview
+          wget https://dot.net/v1/dotnet-install.ps1 -OutFile C:\dotnet-install.ps1
+          C:\dotnet-install.ps1 -Version 6.0.200-preview.22055.15
           dotnet workload install maui
 
       - uses: actions/setup-java@v2
