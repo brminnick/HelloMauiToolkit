@@ -82,15 +82,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Download .NET Installer
-        run: 'curl https://dot.net/v1/dotnet-install.ps1'
-
       - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
         shell: pwsh
-        run : '.\dotnet-install.ps1 -Version 6.0.200-preview.22055.15'
-
-      - name: Install .NET MAUI Workload
-        run : 'dotnet workload install maui'
+        run : |
+          curl https://dot.net/v1/dotnet-install.ps1
+          "C:\Program Files\WindowsPowerShell\powershell.exe" dotnet-install.ps1 -Version 6.0.200-preview.22055.15
+          run : 'dotnet workload install maui'
 
       - uses: actions/setup-java@v2
         with:
