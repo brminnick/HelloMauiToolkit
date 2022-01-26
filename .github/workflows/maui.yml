@@ -15,13 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Setup .NET v6.0
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: "6.0.x"
-
-      - name: Install .NET MAUI Workload
+      - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
         run: |
+          curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --version 6.0.200-preview.22055.15 --quality preview
           dotnet workload install maui
 
       - name: Restore NuGet
