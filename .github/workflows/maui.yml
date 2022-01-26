@@ -86,7 +86,7 @@ jobs:
         shell: pwsh
         run : |
           curl -OL https://dot.net/v1/dotnet-install.ps1
-          dotnet-install.ps1 -Version 6.0.200-preview.22055.15
+          powershell ./dotnet-install.ps1 -Version 6.0.200-preview.22055.15
           dotnet workload install maui
 
       - uses: actions/setup-java@v2
