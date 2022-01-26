@@ -88,7 +88,7 @@ jobs:
           curl -OL https://dot.net/v1/dotnet-install.ps1
           powershell ./dotnet-install.ps1 -Version 6.0.200-preview.22055.15
           dotnet workload install maui
-          echo "${HOME}\\AppData\\Local\\Microsoft\\dotnet"" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "${HOME}\\AppData\\Local\\Microsoft\\dotnet" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
       - uses: actions/setup-java@v2
         with:
