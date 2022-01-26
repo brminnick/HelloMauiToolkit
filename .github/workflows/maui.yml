@@ -86,8 +86,7 @@ jobs:
         shell: pwsh
         run : |
           curl -OL https://dot.net/v1/dotnet-install.ps1
-          powershell ./dotnet-install.ps1 -Version 6.0.200-preview.22055.15
-          echo "C:\Users\runneradmin\AppData\Local\Microsoft\dotnet\6.0.200-preview.22055.15" | Out-File -FilePath $env:GITHUB_PATH 
+          powershell ./dotnet-install.ps1 -Version 6.0.200-preview.22055.15 -InstallDir "C:\Program Files\dotnet\sdk"
           dotnet --info
           dotnet workload install maui
 
