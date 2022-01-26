@@ -87,7 +87,7 @@ jobs:
 
       - name: Install .NET 6.0.2-preview.22055.15 + .NET MAUI Workload
         shell: pwsh
-        run : 'dotnet-install.ps1 -Version 6.0.200-preview.22055.15'
+        run : '.\dotnet-install.ps1 -Version 6.0.200-preview.22055.15'
 
       - name: Install .NET MAUI Workload
         run : 'dotnet workload install maui'
