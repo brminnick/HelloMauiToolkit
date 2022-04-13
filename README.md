@@ -12,7 +12,7 @@ This specific example uses the [`ColorToHexRgbStringConverter`](https://github.c
 At the top of your XAML file, add the following `xmlns`
 
 ```xml
-xmlns:converters="clr-namespace:CommunityToolkit.Maui.Converters;assembly=CommunityToolkit.Maui"
+xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
 ```
 
 #### Use `ColorToHexRgbStringConverter`
@@ -20,7 +20,7 @@ xmlns:converters="clr-namespace:CommunityToolkit.Maui.Converters;assembly=Commun
 In your `Binding` assign `Converter={converters:ColorToHexRgbStringConverter}`:
 
 ```xml
-Text="{Binding Source={x:Reference ClickMeButton}, Path=BackgroundColor, Converter={converters:ColorToHexRgbStringConverter}}
+Text="{Binding Source={x:Reference ClickMeButton}, Path=BackgroundColor, Converter={toolkit:ColorToHexRgbStringConverter}}
 ```
 
 <p align="center">
