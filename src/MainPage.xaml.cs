@@ -1,16 +1,20 @@
 ﻿using System;
 using Microsoft.Maui.Controls;
-using Microsoft.Maui.Essentials;
+using Microsoft.Maui.Accessibility;
 
 namespace HelloMauiToolkit;
 
 partial class MainPage : ContentPage
 {
+	readonly ISemanticScreenReader _semanticScreenReader;
+
 	int count = 0;
 
-	public MainPage()
+	public MainPage(ISemanticScreenReader semanticScreenReader)
 	{
 		InitializeComponent();
+
+		_semanticScreenReader = semanticScreenReader;
 
 		CounterLabel ??= new();
 		ClickMeButton ??= new();
@@ -21,6 +25,6 @@ partial class MainPage : ContentPage
 		count++;
 		CounterLabel.Text = $"Current count: {count}";
 
-		SemanticScreenReader.Announce(CounterLabel.Text);
+		_semanticScreenReader.Announce(CounterLabel.Text);
 	}
 }
