@@ -7,6 +7,27 @@ The [.NET MAUI Community Toolkit](https://github.com/communitytoolkit/maui) is a
 
 This specific example uses the [`ColorToHexRgbStringConverter`](https://github.com/CommunityToolkit/Maui/blob/202565a8ac06ae2df81123ebb87cce8c8ea673b9/src/CommunityToolkit.Maui/Converters/ColorToStringConverter.shared.cs#L25-L30).
 
+#### Add `UseMauiCommunityToolkit()`
+
+In order to use the .NET MAUI Community Toolkit you need to call the extension method in your `MauiProgram.cs` file as follows:
+
+```csharp
+using CommunityToolkit.Maui;
+
+public static class MauiProgram
+{
+	public static MauiApp CreateMauiApp()
+	{
+		var builder = MauiApp.CreateBuilder();
+		
+		// Initialise the toolkit
+		builder.UseMauiApp<App>().UseMauiCommunityToolkit();
+
+		// the rest of your logic...
+	}
+}
+```
+
 #### Add XAML Namespace
 
 At the top of your XAML file, add the following `xmlns`
