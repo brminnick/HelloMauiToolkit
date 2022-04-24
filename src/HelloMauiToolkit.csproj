@@ -1,5 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-ios;net6.0-android;net6.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) and '$(MSBuildRuntimeType)' == 'Full'">$(TargetFrameworks);net6.0-windows10.0.19041</TargetFrameworks>
@@ -7,16 +7,12 @@
 		<RootNamespace>HelloMauiToolkit</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
-
 		<!-- Display name -->
 		<ApplicationTitle>HelloMauiToolkit</ApplicationTitle>
-
 		<!-- App Identifier -->
 		<ApplicationId>com.Minnick.HelloMauiToolkit</ApplicationId>
-
 		<!-- Versions -->
 		<ApplicationVersion>1</ApplicationVersion>
-
 		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">14.2</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-maccatalyst'">14.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">21.0</SupportedOSPlatformVersion>
@@ -27,20 +23,17 @@
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiImage Include="Resources\appicon.svg" ForegroundFile="Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
-
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\appiconfg.svg" Color="#512BD4" />
-
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-pre9" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="1.0.0-rc1" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview3" />
 	</ItemGroup>
-	
+
 </Project>
