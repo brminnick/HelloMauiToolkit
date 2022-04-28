@@ -8,22 +8,19 @@ partial class MainPage : ContentPage
 {
 	readonly ISemanticScreenReader _semanticScreenReader;
 
-	int count = 0;
+	int _count = 0;
 
 	public MainPage(ISemanticScreenReader semanticScreenReader)
 	{
 		InitializeComponent();
 
 		_semanticScreenReader = semanticScreenReader;
-
-		CounterLabel ??= new();
-		ClickMeButton ??= new();
 	}
 
 	void OnCounterClicked(object sender, EventArgs e)
 	{
-		count++;
-		CounterLabel.Text = $"Current count: {count}";
+		_count++;
+		CounterLabel.Text = $"Current count: {_count}";
 
 		_semanticScreenReader.Announce(CounterLabel.Text);
 	}
