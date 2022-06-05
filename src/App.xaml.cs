@@ -8,10 +8,10 @@ namespace HelloMauiToolkit;
 
 partial class App : Application
 {
-	public App()
+	public App(AppShell appShell)
 	{
 		InitializeComponent();
 
-		MainPage = new MainPage(Microsoft.Maui.Accessibility.SemanticScreenReader.Default);
+		MainPage = appShell;
 	}
 }
