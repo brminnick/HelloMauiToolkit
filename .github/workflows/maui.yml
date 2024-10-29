@@ -13,14 +13,17 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET v7.0
-        uses: actions/setup-dotnet@v3
+      - name: Setup .NET v8.0
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: |
-            6.0.x
-            7.0.x
+          dotnet-version: '8.0.x'
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'microsoft'
+          java-version: '17'
 
       - name: Install .NET MAUI Workload
         run: |
@@ -28,24 +31,22 @@ jobs:
 
       - name: Restore NuGet
         run: |
-          dotnet restore ./src
+          dotnet restore ./
 
       - name: Build Android App
         run: |
-          dotnet build ./src -f net7.0-android
+          dotnet build ./ -f net8.0-android
 
   Build_iOS:
-    runs-on: macos-13
+    runs-on: macos-14
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET v7.0
-        uses: actions/setup-dotnet@v3
+      - name: Setup .NET v8.0
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: |
-            6.0.x
-            7.0.x
+          dotnet-version: '8.0.x'
 
       - name: Install .NET MAUI Workload
         run: |
@@ -53,7 +54,7 @@ jobs:
 
       - name: Restore NuGet
         run: |
-          dotnet restore ./src
+          dotnet restore ./
 
       - name: Install Xcode
         uses: maxim-lobanov/setup-xcode@v1
@@ -62,20 +63,18 @@ jobs:
 
       - name: Build iOS App
         run: |
-          dotnet build ./src -f net7.0-ios
+          dotnet build ./ -f net8.0-ios
           
   Build_MacCatalyst:
-    runs-on: macos-13
+    runs-on: macos-14
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET v7.0
-        uses: actions/setup-dotnet@v3
+      - name: Setup .NET v8.0
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: |
-            6.0.x
-            7.0.x
+          dotnet-version: '8.0.x'
 
       - name: Install .NET MAUI Workload
         run: |
@@ -83,7 +82,7 @@ jobs:
 
       - name: Restore NuGet
         run: |
-          dotnet restore ./src
+          dotnet restore ./
 
       - name: Install Xcode
         uses: maxim-lobanov/setup-xcode@v1
@@ -92,25 +91,23 @@ jobs:
 
       - name: Build macOS App
         run: |
-          dotnet build ./src -f net7.0-maccatalyst
+          dotnet build ./ -f net8.0-maccatalyst
 
   Build_Windows:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v4
         with:
           distribution: 'microsoft'
-          java-version: '11'
+          java-version: '17'
 
-      - name: Setup .NET v7.0
-        uses: actions/setup-dotnet@v3
+      - name: Setup .NET v8.0
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: |
-            6.0.x
-            7.0.x
+          dotnet-version: '8.0.x'
 
       - name: Install .NET MAUI Workload
         run: |
@@ -118,8 +115,8 @@ jobs:
 
       - name: Restore NuGet
         run: |
-          dotnet restore ./src
+          dotnet restore ./
 
       - name: Build Windows App
         run: |
-          dotnet build ./src
+          dotnet build ./
