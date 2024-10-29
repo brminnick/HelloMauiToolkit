@@ -18,8 +18,6 @@
     <MauiEnableXamlCBindingWithSourceCompilation>true</MauiEnableXamlCBindingWithSourceCompilation>
 
     <!-- WarningsAsErrors
-        CsWinRT1028: Class implements WinRT interfaces but isn't marked partial
-        CsWinRT1030: Class implements WinRT interfaces that require unsafe code
         XC0045: Binding: Property not found
         XC0103: Consider attributing the markup extension with [RequireService] or [AcceptEmptyServiceProvider] if it doesn't require any
         NU1900	Error communicating with package source, while getting vulnerability information.
@@ -33,7 +31,6 @@
         IL3***: AOT Warnings-->
     <WarningsAsErrors>
       nullable,
-      CsWinRT1028,CsWinRT1030,
       XC0045,XC0103,
       NU1900,NU1901,NU1902,NU1903,NU1904,NU1905,
       CS0618,CA2012,
